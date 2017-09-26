@@ -6,7 +6,7 @@ var ettjRepositorio = require('../repositorios/ettj-repositorio');
 exports.post = async(req, res, next) => {
     try {
         console.log(req.body);
-        ettjRepositorio.create(req.body);
+        await ettjRepositorio.create(req.body);
         res.status(201).send({
             message: 'Ettj criado com sucesso!'
         });
