@@ -13,8 +13,10 @@
     "body-parser": "^1.18.2",
     "debug": "^3.0.1",
     "express": "^4.15.5",
+    "fast-csv": "^2.4.0",
     "http": "0.0.0",
-    "mongoose": "^4.11.13"
+    "mongoose": "^4.11.13",
+    "xml-js": "^1.4.2"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
