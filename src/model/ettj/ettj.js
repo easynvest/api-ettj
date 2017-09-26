@@ -4,26 +4,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ettjSchema = new Schema({
-    dataSet: {
-        type: [{
-            index: {
-                type: String,
+    dataSet: [{
+        index: {
+            type: String,
+            required: true,
+            trim: true,
+            enum: ['IPCA', 'CDI']
+        },
+        rates: [{
+            businessDays: {
+                type: Number,
                 required: true
             },
-            rates: {
-                type: [{
-                    businessDays: {
-                        type: Number,
-                        required: true
-                    },
-                    rateValue: {
-                        type: Number,
-                        required: true
-                    }
-                }]
+            rateValue: {
+                type: Number,
+                required: true
             }
         }]
-    }
+    }]
 });
 
 module.exports = mongoose.model('Ettj', ettjSchema);

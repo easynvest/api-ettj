@@ -3,11 +3,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
-mongoose.connect('mongodb://admin:admin@ds040017.mlab.com:40017/node-store', {
+mongoose.connect(config.connectionString, {
     useMongoClient: true
 });
 
@@ -24,6 +25,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/', indexRoute);
-app.use('/ettjs/', ettjRoute);
+app.use('/ettj', ettjRoute);
 
 module.exports = app;
