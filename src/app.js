@@ -17,6 +17,7 @@ const ettjModel = require('../src/model/ettj/ettj');
 const indexModel = require('../src/model/index/index');
 
 //Rotas
+const indexRoute = require('../src/routes/index-route');
 const cdiRoute = require('../src/routes/cdi-route');
 const ipcaRoute = require('../src/routes/ipca-route');
 const dataImportRoute = require('../src/routes/data-import-route');
@@ -26,7 +27,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-//app.use('/', indexRoute);
+app.use('/', indexRoute);
 app.use('/data-import', dataImportRoute)
 app.use('/ipca', ipcaRoute);
 app.use('/cdi', cdiRoute);

@@ -1,23 +1,11 @@
 const convert = require('xml-js');
 const axios = require('axios');
 
-const IpcaRepository = require('../repositorios/ipca-repositorio');
-const CdiRepository = require('../repositorios/cdi-repositorio');
+const IpcaRepository = require('../repositories/ipca-repositorio');
+const CdiRepository = require('../repositories/cdi-repositorio');
 
 const XmlFileUrl = 'http://www.anbima.com.br/est_termo/xml/CurvaZero.xml'
 
-async function doRequest(options) {
-    return new Promise ((resolve, reject) => {
-      let req = http.request(options);
-      req.on('response', res => {
-        resolve(res);
-      });
-      req.on('error', err => {
-        reject(err);
-      });
-    }); 
-  }
-  
 downloadXmlFile = async (url) => {
     console.log(`- downloading xml file from (${url})`);
     const response = await axios.get(url, { responseType: 'json' });

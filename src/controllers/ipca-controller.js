@@ -1,4 +1,4 @@
-const ipcaRepositorio = require('../repositorios/ipca-repositorio');
+const ipcaRepositorio = require('../repositories/ipca-repositorio');
 
 exports.get = async(req, res, next) => {
     var ipca = await ipcaRepositorio.get();
