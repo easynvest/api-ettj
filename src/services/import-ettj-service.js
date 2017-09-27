@@ -1,90 +1,126 @@
-const parser = require('xml-js');
-const path = require('path');
-const fs = require('fs');
+const convert = require('xml-js');
+const axios = require('axios');
 
-const XML_PATH = path.resolve('EttjCurvaZero.xml');
 const IpcaRepository = require('../repositorios/ipca-repositorio');
 const CdiRepository = require('../repositorios/cdi-repositorio');
 
-function readFile() {
-    return new Promise((resolve, reject) => {
-        fs.readFile(XML_PATH, (err, data) => {
-            try {
-                var xml = data.toString();
-                var json = parser.xml2json(xml, {compact: true, spaces: 4});
-                resolve(json);
-            } catch (error) {
-                reject(err)
-            }
-        })
-    })
+const XmlFileUrl = 'http://www.anbima.com.br/est_termo/xml/CurvaZero.xml'
+
+async function doRequest(options) {
+    return new Promise ((resolve, reject) => {
+      let req = http.request(options);
+      req.on('response', res => {
+        resolve(res);
+      });
+      req.on('error', err => {
+        reject(err);
+      });
+    }); 
+  }
+  
+downloadXmlFile = async (url) => {
+    console.log(`- downloading xml file from (${url})`);
+    const response = await axios.get(url, { responseType: 'json' });
+    return response.data;
 }
 
-function parseJson(jsonString){
-    const originalJsonData = JSON.parse(jsonString);
-   
-    const circular_3316 = originalJsonData.CURVAZERO.CIRCULAR_3316.CIRCULAR.map(c => ({
-        days: Number.parseInt(c._attributes.Vertices.replace(/\./g, '')),
-        rate: c._attributes.Taxa.length > 0 ? Number.parseFloat(c._attributes.Taxa.replace(/\,/g, '.')) : null
-    }));
+parseJson = (xml) => {
 
-    const ettj = originalJsonData.CURVAZERO.ETTJ.VERTICES.map(e => ({
+    console.log('- parsing json string to structured json object');
+
+    var json = JSON.parse(convert.xml2json(xml, { compact: true, spaces: 4 }));
+
+    // ATENÇÃO: 
+    // Oss valores dos campos IPCA e Prefixados estão invertidos no xml baixado no link 'http://www.anbima.com.br/est_termo/xml/CurvaZero.xml'
+    // Então:  IPCA => Pre
+    //         Prefixados => IPCA
+
+    const ettj = json.CURVA_ZERO.ETTJ.VERTICES.map(e => ({
         days: Number.parseInt(e._attributes.Vertice.replace(/\./g, '')),
-        ipca: Number.parseFloat(e._attributes.IPCA.replace(/\,/g, '.')),
-        pre: e._attributes.Prefixados.length > 0 ? Number.parseFloat(e._attributes.Prefixados.replace(/\,/g, '.')) : null,
+        ipca: Number.parseFloat(e._attributes.Prefixados.replace(/\,/g, '.')), // => IPCA
+        pre: e._attributes.IPCA.length > 0 ? Number.parseFloat(e._attributes.IPCA.replace(/\,/g, '.')) : null, // => Prefixados
         inflacao: e._attributes.Inflacao.length > 0 ? Number.parseFloat(e._attributes.Inflacao.replace(/\,/g, '.')) : null
     }));
 
-    const ettjMinDays = ettj.map(function(el) {
+    const circular_3316 = json.CURVA_ZERO.CIRCULAR_3361.CIRCULAR.map(c => ({
+        days: Number.parseInt(c._attributes.Vertice.replace(/\./g, '')),
+        rate: c._attributes.Taxa.length > 0 ? Number.parseFloat(c._attributes.Taxa.replace(/\,/g, '.')) : null
+    }));
+
+    const ettjMinDays = ettj.map(function (el) {
         return el.days;
-    }).reduce(function(days) {
+    }).reduce(function (days) {
         return Math.min(days);
     });
 
-    const circularDiff = circular_3316.filter(function(item){
+    const circularDiff = circular_3316.filter(function (item) {
         return item.days < ettjMinDays;
-    }).map(c=> ({
+    }).map(c => ({
         days: c.days,
         ipca: null,
         pre: c.rate,
         inflacao: null
     }));
 
-    circularDiff.forEach(function(element) {
+    circularDiff.forEach(function (element) {
         ettj.push(element);
     }, this);
 
     return ettj;
 }
 
-async function sync() {
-    const jsonString = await readFile();
-    const ettjData = parseJson(jsonString);
+clearDatabase = async () => {
 
-    const ipca = ettjData.filter(function(item){
+    console.log('- cleaning database');
+
+    await IpcaRepository.clear();
+    await CdiRepository.clear();
+}
+
+importData = (data) => {
+
+    console.log('- importing data');
+
+    const ipca = data.filter(function (item) {
         return item.ipca != null
-    }).map(e=> ({
+    }).map(e => ({
         businessDays: e.days,
         rateValue: e.ipca
     }));
 
-    const cdi = ettjData.filter(function(item){
+    const cdi = data.filter(function (item) {
         return item.pre != null
-    }).map(e=> ({
+    }).map(e => ({
         businessDays: e.days,
         rateValue: e.pre
     }));
-    
-    await IpcaRepository.clear();
-    await CdiRepository.clear();
 
-    ipca.forEach(function(item){
+    ipca.forEach(function (item) {
         IpcaRepository.create(item);
     }, this);
 
-    cdi.forEach(function(item){
+    cdi.forEach(function (item) {
         CdiRepository.create(item);
     }, this);
+}
+
+sync = async () => {
+
+    console.log('- sync process started');
+
+    try {
+
+        const xml = await downloadXmlFile(XmlFileUrl);
+        const data = parseJson(xml);
+
+        await clearDatabase();
+        importData(data);
+
+        console.log('- sync process finalized');
+
+    } catch (error) {
+        return console.error(error);
+    }
 }
 
 module.exports = sync

@@ -61,5 +61,5 @@ exports.getByBusinessDays = async(businessDays) => {
 };
 
 exports.clear = async() => {
-    await CDIModel.remove();
+    await CDIModel.remove({});
 };
