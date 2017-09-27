@@ -26,7 +26,7 @@ downloadXmlFile = async (url) => {
 
 parseJson = (xml) => {
 
-    console.log('- parsing json string to structured json object');
+    console.log('- parsing xml to structured json object');
 
     var json = JSON.parse(convert.xml2json(xml, { compact: true, spaces: 4 }));
 
