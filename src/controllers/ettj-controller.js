@@ -1,12 +1,13 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var ettjRepositorio = require('../repositorios/ettj-repositorio');
+const mongoose = require('mongoose');
+const ettjRepositorio = require('../repositorios/ettj-repositorio');
+const SyncEttjService = require('../services/sync-ettj');
 
 exports.post = async(req, res, next) => {
     try {
-        console.log(req.body);
-        await ettjRepositorio.create(req.body);
+        SyncEttjService();
+
         res.status(201).send({
             message: 'Ettj criado com sucesso!'
         });

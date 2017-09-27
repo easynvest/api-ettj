@@ -1,0 +1,129 @@
+<CURVAZERO>
+		<DATA_REFERENCIA>25/09/2017</DATA_REFERENCIA>
+<PARAMETROS >
+<PARAMETRO Grupo='PREFIXADOS' B1='0,106630702618423' B2='-2,31108055004726E-02' B3='-8,45083825989725E-02' B4='4,8694653900761E-03' L1='1,61727130932029' L2='0,860967653286826' />
+<PARAMETRO Grupo='IPCA' B1='5,31274852357428E-02' B2='0,018446342369374' B3='-0,134198511937693' B4='3,29987314554021E-02' L1='1,59277762008211' L2='0,912855203696377' />
+</PARAMETROS>
+<ETTJ >
+<VERTICES Vertice='252' IPCA='3,0918' Prefixados='7,1267' Inflacao='3,9138' />
+<VERTICES Vertice='378' IPCA='3,1008' Prefixados='7,5055' Inflacao='4,2722' />
+<VERTICES Vertice='504' IPCA='3,3689' Prefixados='7,9449' Inflacao='4,4268' />
+<VERTICES Vertice='630' IPCA='3,6718' Prefixados='8,3396' Inflacao='4,5024' />
+<VERTICES Vertice='756' IPCA='3,9372' Prefixados='8,6658' Inflacao='4,5494' />
+<VERTICES Vertice='882' IPCA='4,1504' Prefixados='8,9275' Inflacao='4,5867' />
+<VERTICES Vertice='1.008' IPCA='4,3166' Prefixados='9,1364' Inflacao='4,6203' />
+<VERTICES Vertice='1.134' IPCA='4,4452' Prefixados='9,3041' Inflacao='4,6521' />
+<VERTICES Vertice='1.260' IPCA='4,5455' Prefixados='9,4402' Inflacao='4,6818' />
+<VERTICES Vertice='1.386' IPCA='4,6248' Prefixados='9,5521' Inflacao='4,7094' />
+<VERTICES Vertice='1.512' IPCA='4,6887' Prefixados='9,6455' Inflacao='4,7347' />
+<VERTICES Vertice='1.638' IPCA='4,7410' Prefixados='9,7244' Inflacao='4,7578' />
+<VERTICES Vertice='1.764' IPCA='4,7847' Prefixados='9,7919' Inflacao='4,7785' />
+<VERTICES Vertice='1.890' IPCA='4,8218' Prefixados='9,8503' Inflacao='4,7971' />
+<VERTICES Vertice='2.016' IPCA='4,8537' Prefixados='9,9014' Inflacao='4,8140' />
+<VERTICES Vertice='2.142' IPCA='4,8814' Prefixados='9,9463' Inflacao='4,8291' />
+<VERTICES Vertice='2.268' IPCA='4,9059' Prefixados='9,9863' Inflacao='4,8428' />
+<VERTICES Vertice='2.394' IPCA='4,9276' Prefixados='' Inflacao='' />
+<VERTICES Vertice='2.520' IPCA='4,9471' Prefixados='' Inflacao='' />
+<VERTICES Vertice='2.646' IPCA='4,9646' Prefixados='' Inflacao='' />
+<VERTICES Vertice='2.772' IPCA='4,9805' Prefixados='' Inflacao='' />
+<VERTICES Vertice='2.898' IPCA='4,9950' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.024' IPCA='5,0083' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.150' IPCA='5,0205' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.276' IPCA='5,0317' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.402' IPCA='5,0421' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.528' IPCA='5,0518' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.654' IPCA='5,0608' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.780' IPCA='5,0692' Prefixados='' Inflacao='' />
+<VERTICES Vertice='3.906' IPCA='5,0771' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.032' IPCA='5,0844' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.158' IPCA='5,0913' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.284' IPCA='5,0978' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.410' IPCA='5,1040' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.536' IPCA='5,1098' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.662' IPCA='5,1153' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.788' IPCA='5,1205' Prefixados='' Inflacao='' />
+<VERTICES Vertice='4.914' IPCA='5,1254' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.040' IPCA='5,1301' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.166' IPCA='5,1345' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.292' IPCA='5,1388' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.418' IPCA='5,1428' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.544' IPCA='5,1467' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.670' IPCA='5,1504' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.796' IPCA='5,1539' Prefixados='' Inflacao='' />
+<VERTICES Vertice='5.922' IPCA='5,1573' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.048' IPCA='5,1605' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.174' IPCA='5,1636' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.300' IPCA='5,1666' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.426' IPCA='5,1695' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.552' IPCA='5,1722' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.678' IPCA='5,1749' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.804' IPCA='5,1774' Prefixados='' Inflacao='' />
+<VERTICES Vertice='6.930' IPCA='5,1799' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.056' IPCA='5,1823' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.182' IPCA='5,1845' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.308' IPCA='5,1868' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.434' IPCA='5,1889' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.560' IPCA='5,1910' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.686' IPCA='5,1929' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.812' IPCA='5,1949' Prefixados='' Inflacao='' />
+<VERTICES Vertice='7.938' IPCA='5,1967' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.064' IPCA='5,1986' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.190' IPCA='5,2003' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.316' IPCA='5,2020' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.442' IPCA='5,2037' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.568' IPCA='5,2053' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.694' IPCA='5,2068' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.820' IPCA='5,2083' Prefixados='' Inflacao='' />
+<VERTICES Vertice='8.946' IPCA='5,2098' Prefixados='' Inflacao='' />
+<VERTICES Vertice='9.072' IPCA='5,2112' Prefixados='' Inflacao='' />
+<VERTICES Vertice='9.198' IPCA='5,2126' Prefixados='' Inflacao='' />
+<VERTICES Vertice='9.324' IPCA='5,2140' Prefixados='' Inflacao='' />
+</ETTJ>
+<CIRCULAR_3316 >
+<CIRCULAR Vertices='21' Taxa='7,9968' />
+<CIRCULAR Vertices='42' Taxa='7,7154' />
+<CIRCULAR Vertices='63' Taxa='7,4967' />
+<CIRCULAR Vertices='126' Taxa='7,1265' />
+<CIRCULAR Vertices='252' Taxa='7,1267' />
+<CIRCULAR Vertices='504' Taxa='7,9449' />
+<CIRCULAR Vertices='756' Taxa='8,6658' />
+<CIRCULAR Vertices='1.008' Taxa='9,1364' />
+<CIRCULAR Vertices='1.260' Taxa='9,4402' />
+<CIRCULAR Vertices='2.520' Taxa='' />
+</CIRCULAR_3316>
+<ERROS >
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/10/2017' Erro='0,0691' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/01/2018' Erro='0,0762' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/04/2018' Erro='-0,0675' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/07/2018' Erro='-0,0591' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/10/2018' Erro='-0,0243' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/01/2019' Erro='0,0015' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/04/2019' Erro='0,0190' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/07/2019' Erro='0,0136' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/10/2019' Erro='-0,0067' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/01/2020' Erro='0,0132' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/07/2020' Erro='-0,0262' />
+<ERRO Titulo='LTN' SELIC='100000' Vencimento='01/07/2021' Erro='-0,0554' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2018' Erro='0,0132' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2019' Erro='0,0522' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2021' Erro='-0,0066' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2023' Erro='0,0237' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2025' Erro='0,0270' />
+<ERRO Titulo='NTN-F' SELIC='950199' Vencimento='01/01/2027' Erro='-0,0215' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2018' Erro='0,0036' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2019' Erro='-0,0089' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2020' Erro='0,0045' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2021' Erro='0,0244' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2022' Erro='-0,0081' />
+<ERRO Titulo='NTN-B' SELIC='760100' Vencimento='15/03/2023' Erro='-0,0445' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2023' Erro='-0,0305' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2024' Erro='0,0660' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2026' Erro='-0,0047' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2030' Erro='-0,0002' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2035' Erro='0,0078' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2040' Erro='0,0253' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2045' Erro='-0,0532' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/08/2050' Erro='-0,0155' />
+<ERRO Titulo='NTN-B' SELIC='760199' Vencimento='15/05/2055' Erro='0,0336' />
+</ERROS>
+</CURVAZERO>
