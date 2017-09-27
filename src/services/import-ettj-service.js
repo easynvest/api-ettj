@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const XML_PATH = path.resolve('EttjCurvaZero.xml');
-const IpcaRepository = require('../repositorios/ipca-repositorio');
-const CdiRepository = require('../repositorios/cdi-repositorio');
+const IpcaRepository = require('../repositories/ipca-repositorio');
+const CdiRepository = require('../repositories/cdi-repositorio');
 
 function readFile() {
     return new Promise((resolve, reject) => {
