@@ -52,5 +52,5 @@ exports.getByBusinessDays = async(businessDays) => {
 };
 
 exports.clear = async() => {
-    await IPCAModel.remove();
+    await IPCAModel.remove({});
 };
