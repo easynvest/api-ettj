@@ -12,3 +12,7 @@ exports.get = async() => {
     var ipca = await IPCAModel.find({}, 'businessDays rateValue');
     return ipca;
 };
+
+exports.clear = async() => {
+    await IPCAModel.remove();
+};

@@ -2,8 +2,9 @@ const parser = require('xml-js');
 const path = require('path');
 const fs = require('fs');
 
-const EttjRepository = require('../repositorios/ettj-repositorio');
 const XML_PATH = path.resolve('EttjCurvaZero.xml');
+const IpcaRepository = require('../repositorios/ipca-repositorio');
+const CdiRepository = require('../repositorios/cdi-repositorio');
 
 function readFile() {
     return new Promise((resolve, reject) => {
@@ -60,12 +61,30 @@ async function sync() {
     const jsonString = await readFile();
     const ettjData = parseJson(jsonString);
 
-    const ipca = ettjData.map(e=> ({
-        businesDays: e.days,
-        rate: e.ipca
+    const ipca = ettjData.filter(function(item){
+        return item.ipca != null
+    }).map(e=> ({
+        businessDays: e.days,
+        rateValue: e.ipca
     }));
 
-    await EttjRepository.create(data);
+    const cdi = ettjData.filter(function(item){
+        return item.pre != null
+    }).map(e=> ({
+        businessDays: e.days,
+        rateValue: e.pre
+    }));
+    
+    await IpcaRepository.clear();
+    await CdiRepository.clear();
+
+    ipca.forEach(function(item){
+        IpcaRepository.create(item);
+    }, this);
+
+    cdi.forEach(function(item){
+        CdiRepository.create(item);
+    }, this);
 }
 
 module.exports = sync

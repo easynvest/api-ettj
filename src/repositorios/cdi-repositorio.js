@@ -12,3 +12,7 @@ exports.get = async() => {
     var cdi = await CDIModel.find();
     return cdi;
 };
+
+exports.clear = async() => {
+    await CDIModel.remove();
+};
