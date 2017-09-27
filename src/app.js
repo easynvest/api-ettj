@@ -14,17 +14,21 @@ mongoose.connect(config.connectionString, {
 
 //Models
 const ettjModel = require('../src/model/ettj/ettj');
+const indexModel = require('../src/model/index/index');
 
 //Rotas
-const indexRoute = require('../src/routes/index');
+const cdiRoute = require('../src/routes/cdi-route');
+const ipcaRoute = require('../src/routes/ipca-route');
 const ettjRoute = require('../src/routes/ettj-route');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use('/', indexRoute);
-app.use('/ettj', ettjRoute);
+//app.use('/', indexRoute);
+app.use('/ipca', ipcaRoute);
+app.use('/cdi', cdiRoute);
 
 module.exports = app;
