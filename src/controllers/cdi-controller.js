@@ -1,4 +1,4 @@
-const cdiRepositorio = require('../repositorios/cdi-repositorio');
+const cdiRepositorio = require('../repositories/cdi-repositorio');
 
 exports.get = async(req, res, next) => {
     var cdi = await cdiRepositorio.get();
