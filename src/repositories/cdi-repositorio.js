@@ -27,30 +27,23 @@ exports.getByBusinessDays = async(businessDays) => {
             .map(x => ({
                 rateValue: x.rateValue,
                 businessDays: x.businessDays
-            }))
-            .sort(function (a, b) {
+            })).sort(function (a, b) {
                 return b.businessDays - a.businessDays
             })[0];
 
         let cdiMax = cdi
             .filter(function (item) {
-                return item.businessDays <= businessDays;
+                return item.businessDays >= businessDays;
             })
             .map(x => ({
                 rateValue: x.rateValue,
                 businessDays: x.businessDays
-            }))
-            .sort(function (a, b) {
+            })).sort(function (a, b) {
                 return a.businessDays - b.businessDays
             })[0];
 
-        if (cdiMin !== null) {
-            cdiResult.push(cdiMin);
-        }
-
-        if (cdiMax !== null) {
-            cdiResult.push(cdiMax);
-        }
+        cdiResult.push(cdiMin);
+        cdiResult.push(cdiMax);
 
 
     } catch (error) {
