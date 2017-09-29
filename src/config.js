@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
-    connectionString: 'mongodb://admin:admin@ds040017.mlab.com:40017/node-store'
+    connectionString: process.env.MONGO_URL
 };
