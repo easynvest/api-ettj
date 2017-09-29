@@ -42,8 +42,16 @@ exports.getByBusinessDays = async(businessDays) => {
                 return a.businessDays - b.businessDays
             })[0];
 
-        ipcaResult.push(ipcaMin);
-        ipcaResult.push(ipcaMax);
+        if (typeof ipcaMin !== 'undefined') {
+            ipcaResult.push(ipcaMin);
+        }
+
+        if (typeof ipcaMax !== 'undefined') {
+            ipcaResult.push(ipcaMax);
+        }
+
+        console.log(ipcaResult);
+
     } catch (error) {
         throw error;
     }

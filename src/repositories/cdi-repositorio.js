@@ -9,7 +9,7 @@ exports.create = async(data) => {
 };
 
 exports.get = async() => {
-    var cdi = await CDIModel.find();
+    var cdi = await CDIModel.find({}, 'businessDays rateValue');
     return cdi;
 };
 
@@ -42,9 +42,13 @@ exports.getByBusinessDays = async(businessDays) => {
                 return a.businessDays - b.businessDays
             })[0];
 
-        cdiResult.push(cdiMin);
-        cdiResult.push(cdiMax);
+        if (typeof cdiMin !== 'undefined') {
+            cdiResult.push(cdiMin);
+        }
 
+        if (typeof cdiMax !== 'undefined') {
+            cdiResult.push(cdiMax);
+        }
 
     } catch (error) {
         throw error;
