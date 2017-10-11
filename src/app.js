@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config');
+const jobDataImport = require('./helpers/jobs/data-import')
 
 const app = express();
 const router = express.Router();
@@ -31,6 +32,8 @@ app.use('/', indexRoute);
 app.use('/data-import', dataImportRoute)
 app.use('/ipca', ipcaRoute);
 app.use('/cdi', cdiRoute);
+
+jobDataImport.start();
 
 app.set('port', (process.env.PORT || 3000))
 app.listen(app.get('port'), function(){
