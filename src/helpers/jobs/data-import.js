@@ -2,7 +2,7 @@ const cron = require('cron');
 const axios = require('axios');
 
 const TIME_ZONE = 'America/Sao_Paulo';
-const CRON_TIME = '00 30 8 * * 1-5'; // Todos os dias (Segunda a Sexta-Feira) às 8h:30m, não roda Sabado e Domingo 
+const CRON_TIME = '00 00 9 * * 1-5'; // Todos os dias (Segunda a Sexta-Feira) às 9h:00m, não roda Sabado e Domingo 
 const URL = 'http://localhost:3000/data-import';
 
 const cronImportData = new cron.CronJob({
