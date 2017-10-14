@@ -143,4 +143,4 @@ const indexSchema = new Schema({
 
 ## Licensing
 
-MIT
+[Apache License Version 2.0](./LICENSE)
