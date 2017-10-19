@@ -6,13 +6,13 @@ const CdiRepository = require('../repositories/cdi-repositorio');
 
 const XmlFileUrl = 'http://www.anbima.com.br/est_termo/xml/CurvaZero.xml'
 
-downloadXmlFile = async (url) => {
+const downloadXmlFile = async (url) => {
     console.log(`- downloading xml file from (${url})`);
     const response = await axios.get(url, { responseType: 'json' });
     return response.data;
 }
 
-parseJson = (xml) => {
+const parseJson = (xml) => {
 
     console.log('- parsing xml to structured json object');
 
@@ -57,7 +57,7 @@ parseJson = (xml) => {
     return ettj;
 }
 
-clearDatabase = async () => {
+const clearDatabase = async () => {
 
     console.log('- cleaning database');
 
@@ -65,7 +65,7 @@ clearDatabase = async () => {
     await CdiRepository.clear();
 }
 
-importData = (data) => {
+const importData = (data) => {
 
     console.log('- importing data');
 
@@ -92,7 +92,7 @@ importData = (data) => {
     }, this);
 }
 
-sync = async () => {
+const sync = async () => {
 
     console.log('- sync process started');
 
